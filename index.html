@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html>
+<head>
+            <style>.lw { font-size: 60px; }</style>
+        </head>
+        <body style="opacity: 1;">
+            
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Granos Sur Caribe - Comercialización de granos colombianos de calidad. Desde Aguachica, Cesar, llevamos el sabor ancestral del Caribe a tu mesa.">
+    <meta name="keywords" content="granos, frijol, arroz, maíz, Aguachica, Cesar, Colombia, Sur Caribe, agricultura, comercio justo">
+    <meta name="author" content="Granos Sur Caribe">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://granossurcaribe.com/">
+    <meta property="og:title" content="Granos Sur Caribe - El sabor auténtico del Caribe colombiano">
+    <meta property="og:description" content="Comercialización de granos de calidad desde Aguachica, Cesar. Apoyamos a agricultores locales y promovemos el comercio justo.">
+    <meta property="og:image" content="https://granossurcaribe.com/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://granossurcaribe.com/">
+    <meta property="twitter:title" content="Granos Sur Caribe">
+    <meta property="twitter:description" content="El sabor auténtico del Caribe colombiano">
+    
+    <title>Granos Sur Caribe - El sabor auténtico del Caribe colombiano</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;family=Merriweather:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- EmailJS para formulario de contacto -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <style>
+        /* ========================================
+           VARIABLES CSS - CONFIGURACIÓN GENERAL
+           ======================================== */
+        :root {
+            --verde-oliva: #6B8E23;
+            --dorado: #D4A053;
+            --terracota: #C85A3E;
+            --crema: #F5F1E8;
+            --verde-oscuro: #1B3A2F;
+            --blanco: #FFFFFF;
+            --gris-claro: #F9F9F9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--verde-oscuro);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+        }
+
+        /* ========================================
+           HEADER & NAVIGATION
+           ======================================== */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: var(--blanco);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-scrolled {
+            padding: 0.5rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--verde-oscuro);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--verde-oliva);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--verde-oliva);
+        }
+
+        .cta-btn {
+            background: var(--verde-oliva);
+            color: var(--blanco);
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(107, 142, 35, 0.3);
+            display: inline-block;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .cta-btn:hover {
+            background: var(--verde-oscuro);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(107, 142, 35, 0.4);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--verde-oscuro);
+        }
+
+        /* ========================================
+           BOTÓN FLOTANTE DE WHATSAPP
+           ======================================== */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* ========================================
+           HERO SECTION
+           ⚠️ IMAGEN REQUERIDA: Foto panorámica del campo
+           Tamaño: 1920x1080px mínimo
+           Tipo: Cultivos, paisaje rural, amanecer en el campo
+           ======================================== */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(107, 142, 35, 0.85), rgba(27, 58, 47, 0.75)), 
+            url('https://i.imgur.com/47oz5jI.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--blanco);
+            position: relative;
+            margin-top: 100px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--dorado);
+            margin-bottom: 2rem;
+        }
+
+        /* ========================================
+           SECCIONES GENERALES
+           ======================================== */
+        section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--verde-oscuro);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--dorado);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--terracota);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        /* ========================================
+           HISTORIA SECTION
+           🖼️ IMAGEN REQUERIDA: Foto del campo o proceso
+           Tamaño: 800x600px mínimo
+           Tipo: Cultivo de frijoles, agricultor trabajando
+           ======================================== */
+        .historia {
+            background: var(--gris-claro);
+        }
+
+        .historia-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            animation: fadeIn 1s ease;
+        }
+
+        .historia-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .historia-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .historia-image {
+            width: 100%;
+            height: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .historia-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .historia-image:hover img {
+            transform: scale(1.1);
+        }
+
+        /* ========================================
+           MISSION VISION
+           ======================================== */
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .mv-card {
+            background: var(--blanco);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+
+        .mv-card h3 {
+            color: var(--verde-oliva);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .mv-card i {
+            color: var(--dorado);
+        }
+
+        /* ========================================
+           VALORES
+           ======================================== */
+        .valores {
+            background: linear-gradient(135deg, var(--verde-oliva), var(--verde-oscuro));
+            color: var(--blanco);
+        }
+
+        .valores .section-title,
+        .valores .section-subtitle {
+            color: var(--blanco);
+        }
+
+        .valores .section-title::after {
+            background: var(--dorado);
+        }
+
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .valor-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .valor-card:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: var(--dorado);
+            transform: translateY(-5px);
+        }
+
+        .valor-card i {
+            font-size: 3rem;
+            color: var(--dorado);
+            margin-bottom: 1rem;
+        }
+
+        .valor-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* ========================================
+           PRODUCTOS
+           🖼️ IMÁGENES REQUERIDAS: Fotos de granos
+           Tamaño: 600x400px cada una
+           Tipos necesarios:
+           1. Frijoles en primer plano
+           2. Arroz en saco o a granel
+           3. Maíz dorado
+           4. Lentejas
+           5. Garbanzos
+           6. Mix de granos varios
+           ======================================== */
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .producto-card {
+            background: var(--blanco);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .producto-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .producto-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--dorado), var(--terracota));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: var(--blanco);
+            overflow: hidden;
+        }
+
+        /* Cuando agregues imágenes reales, usa esto: */
+        .producto-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .producto-card:hover .producto-image img {
+            transform: scale(1.1);
+        }
+
+        .producto-info {
+            padding: 1.5rem;
+        }
+
+        .producto-info h3 {
+            color: var(--verde-oscuro);
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+        }
+
+        .producto-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           COMPROMISO
+           ======================================== */
+        .compromiso {
+            background: var(--crema);
+        }
+
+        .compromiso-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .compromiso-item {
+            background: var(--blanco);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .compromiso-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .compromiso-item i {
+            font-size: 3rem;
+            color: var(--verde-oliva);
+            margin-bottom: 1rem;
+        }
+
+        .compromiso-item h3 {
+            color: var(--verde-oscuro);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        /* ========================================
+           GALERÍA
+           🖼️ IMÁGENES REQUERIDAS: 6 fotos del proceso
+           Tamaño: 600x400px cada una
+           Tipos sugeridos:
+           1. Tractor o herramientas de cultivo
+           2. Manos cosechando o seleccionando granos
+           3. Granos secándose al sol
+           4. Empaque de productos
+           5. Camión o distribución
+           6. Agricultores o comunidad
+           ======================================== */
+       .galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+    padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .galeria-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0;
+    }
+}
+
+        .galeria-item {
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .galeria-item {
+        height: 280px;
+    }
+}
+
+        .galeria-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(107, 142, 35, 0.7), rgba(27, 58, 47, 0.7));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .galeria-item:hover::before {
+            opacity: 1;
+        }
+
+        .galeria-item-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--blanco);
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+
+        .galeria-item:hover .galeria-item-content {
+            opacity: 1;
+        }
+
+        /* ========================================
+           CONTACTO
+           ======================================== */
+        .contacto {
+            background: var(--gris-claro);
+        }
+
+        .contacto-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+    align-items: start;
+}
+
+@media (max-width: 968px) {
+    .contacto-info {
+        gap: 1.5rem;
+    }
+}
+
+       .contacto-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+        .contacto-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--blanco);
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .contacto-item:hover {
+            transform: translateX(5px);
+        }
+
+        .contacto-item i {
+            font-size: 2rem;
+            color: var(--verde-oliva);
+            margin-top: 0.3rem;
+        }
+
+        .contacto-item-text h3 {
+            color: var(--verde-oscuro);
+            margin-bottom: 0.5rem;
+        }
+
+        .contacto-form {
+    background: var(--blanco);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .contacto-form {
+        padding: 2rem 1.5rem;
+    }
+}
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--verde-oscuro);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--verde-oliva);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--verde-oliva);
+            color: var(--blanco);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--verde-oscuro);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(107, 142, 35, 0.3);
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+
+        .redes-sociales {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--verde-oliva);
+            color: var(--blanco);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background: var(--verde-oscuro);
+            transform: translateY(-5px);
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        footer {
+            background: var(--verde-oscuro);
+            color: var(--blanco);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--dorado);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: var(--blanco);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--dorado);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* ========================================
+           ANIMATIONS
+           ======================================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========================================
+           RESPONSIVE DESIGN
+           ======================================== */
+        @media (max-width: 1024px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 4rem 5%;
+            }
+        }
+
+        @media (max-width: 768px) {
+    .mobile-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 100px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 100px);
+        background: var(--blanco);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 2rem;
+        transition: left 0.3s ease;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .hero {
+        height: 80vh;
+        margin-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.2rem;
+    }
+
+    .cta-btn {
+        padding: 0.7rem 1.5rem;    
+        font-size: 0.95rem;        
+        width: auto;               
+        max-width: 90%;            
+    }                              
+                                   
+    .hero .cta-btn {              
+        margin: 0 auto;            
+        display: block;            
+    }                              
+
+    .historia-content,
+    .mission-vision,
+    .contacto-container {
+        grid-template-columns: 1fr;
+    }
+
+    .historia-image {
+        height: 300px;
+    }
+
+    section {
+        padding: 3rem 5%;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .productos-grid,
+    .valores-grid,
+    .compromiso-grid,
+    .galeria-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+
+
+    <!-- ========================================
+         HEADER - NAVEGACIÓN PRINCIPAL
+         ======================================== -->
+    <header class="header-scrolled">
+        <nav>
+            <!-- 🖼️ LOGO: Reemplaza el SVG con tu logo real -->
+            <img src="https://i.imgur.com/YSxmByH.png" alt="Granos Sur Caribe Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#historia">Nuestra Historia</a></li>
+                <li><a href="#valores">Valores</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#compromiso">Compromiso</a></li>
+                <li><a href="#contacto" class="cta-btn">Contáctanos</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ========================================
+         BOTÓN FLOTANTE DE WHATSAPP
+         📱 EDITABLE: Cambia el número en la sección JavaScript
+         ======================================== -->
+    <a href="https://wa.me/573175315276?text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Granos%20Sur%20Caribe." class="whatsapp-float" id="whatsappBtn" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ========================================
+         HERO SECTION - PORTADA PRINCIPAL
+         ======================================== -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Granos Sur Caribe</h1>
+            <p class="hero-tagline">El sabor que te conecta con el corazón del Caribe colombiano</p>
+            <p>Cultivado con amor y tradición para nutrir tu vida y tus sueños</p>
+            <a href="#productos" class="cta-btn">Descubre Nuestros Productos</a>
+        </div>
+    </section>
+
+    <!-- ========================================
+         HISTORIA - NUESTRA HISTORIA
+         ======================================== -->
+    <section class="historia fade-in visible" id="historia">
+        <h2 class="section-title">Nuestra Historia</h2>
+        <p class="section-subtitle">Desde el corazón de Aguachica, Cesar</p>
+        <div class="historia-content">
+            <div class="historia-text">
+                <p>Granos Sur Caribe nace en Aguachica, Cesar, impulsada por el sueño de su fundador, orgulloso de su tierra y su gente. Como empresa de esta región, conocemos el valor del trabajo en el campo y la calidad de nuestros granos.</p>
+                <p>Desde la vereda La Morena, donde cultivamos el frijol con nuestras propias manos, hasta la selección de los mejores granos en los graneros locales, cada paso está guiado por nuestra pasión por esta tierra y nuestro compromiso con ofrecer productos de la más alta calidad a precios justos.</p>
+                <p>No solo vendemos granos; impulsamos el desarrollo de nuestra comunidad, comprando directamente a los agricultores locales, garantizando precios justos y apoyando sus familias. Queremos que cada plato que prepares con nuestros granos te recuerde el sabor auténtico de nuestra tierra y el sabor ancestral de nuestros campesinos.</p>
+            </div>
+            <div class="historia-image">
+                <!-- 🖼️ IMAGEN HISTORIA: Reemplaza el src con tu foto -->
+                <!-- Sugerencia: Foto del campo de cultivo o agricultor trabajando -->
+                <img src="https://i.imgur.com/kbAtfka.jpeg" alt="Campo de cultivo en Aguachica">
+                <!-- Para tu imagen: <img src="images/campo-cultivo.jpg" alt="..."> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         MISIÓN Y VISIÓN
+         ======================================== -->
+    <section class="fade-in">
+        <h2 class="section-title">Misión y Visión</h2>
+        <div class="mission-vision">
+            <div class="mv-card">
+                <h3><i class="fas fa-bullseye"></i> Nuestra Misión</h3>
+                <p>Ser el motor del desarrollo económico y social del Sur Caribe, conectando a los agricultores con los mercados, ofreciendo productos de alta calidad y promoviendo una cultura de consumo responsable, para mejorar la calidad de vida de nuestra gente y preservar nuestro patrimonio cultural y natural.</p>
+            </div>
+            <div class="mv-card">
+                <h3><i class="fas fa-eye"></i> Nuestra Visión</h3>
+                <p>Ser la empresa líder en la comercialización de granos en el Sur Caribe colombiano, reconocida por la calidad de nuestros productos, el compromiso con nuestros agricultores y el impacto positivo en nuestra comunidad, consolidando nuestra presencia en el mercado local y estableciendo relaciones sólidas con nuestros clientes y proveedores.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         VALORES CORPORATIVOS
+         ======================================== -->
+    <section class="valores fade-in" id="valores">
+        <h2 class="section-title">Nuestros Valores</h2>
+        <p class="section-subtitle">Los pilares que nos definen</p>
+        <div class="valores-grid">
+            <div class="valor-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Transparencia</h3>
+                <p>Comunicación abierta y honesta con todos nuestros aliados</p>
+            </div>
+            <div class="valor-card">
+                <i class="fas fa-heart"></i>
+                <h3>Honestidad</h3>
+                <p>Integridad y ética en todas nuestras acciones</p>
+            </div>
+            <div class="valor-card">
+                <i class="fas fa-balance-scale"></i>
+                <h3>Coherencia</h3>
+                <p>Alineamos nuestras palabras con nuestras acciones</p>
+            </div>
+            <div class="valor-card">
+                <i class="fas fa-star"></i>
+                <h3>Excelencia</h3>
+                <p>Mejora continua en productos y servicios</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         PRODUCTOS - CATÁLOGO
+         🖼️ IMÁGENES DE PRODUCTOS REQUERIDAS
+         ======================================== -->
+    <section class="productos fade-in" id="productos">
+        <h2 class="section-title">Nuestros Productos</h2>
+        <p class="section-subtitle">Granos de la más alta calidad del Sur Caribe</p>
+        <div class="productos-grid">
+            <!-- PRODUCTO 1: FRIJOL -->
+            <div class="producto-card">
+                <div class="producto-image">
+    <img src="https://i.imgur.com/siiuUWt.jpeg" alt="Frijoles">
+</div>
+                <div class="producto-info">
+                    <h3>Frijol</h3>
+                    <p>Cultivado en la vereda La Morena con prácticas tradicionales y sostenibles. Rico en proteínas y fibra, perfecto para tus recetas familiares.</p>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 2: ARROZ -->
+            <div class="producto-card">
+                <div class="producto-image">
+    <img src="https://i.imgur.com/fUt1xUQ.jpeg" alt="Arroz">
+</div>
+
+                <div class="producto-info">
+                    <h3>Arroz</h3>
+                    <p>Seleccionado cuidadosamente de los mejores cultivos de la región. Sabor auténtico y textura perfecta para cada preparación.</p>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 3: MAÍZ -->
+            <div class="producto-card">
+                <div class="producto-image">
+    <img src="https://i.imgur.com/imYYJbV.jpeg" alt="Maíz">
+</div>
+
+                <div class="producto-info">
+                    <h3>Maíz</h3>
+                    <p>Granos dorados llenos de tradición y sabor. Ideal para preparaciones tradicionales que conectan con nuestras raíces.</p>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 4: LENTEJAS -->
+            <div class="producto-card">
+                <div class="producto-image">
+    <img src="https://i.imgur.com/gxxHBZf.jpeg" alt="Lentejas">
+</div>
+
+                <div class="producto-info">
+                    <h3>Lentejas</h3>
+                    <p>Nutritivas y versátiles, nuestras lentejas son seleccionadas con los más altos estándares de calidad.</p>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 5: GARBANZO -->
+            <div class="producto-card">
+                <div class="producto-image">
+    <img src="https://i.imgur.com/wpn3qVs.jpeg" alt="Garbanzos">
+</div>
+
+                <div class="producto-info">
+                    <h3>Garbanzo</h3>
+                    <p>Fuente de proteína vegetal, perfectos para ensaladas, sopas y preparaciones saludables.</p>
+                </div>
+            </div>
+
+            <!-- PRODUCTO 6: OTROS GRANOS -->
+            <div class="producto-card">
+                <div class="producto-image">
+    <img src="https://i.imgur.com/x6VPfE2.jpeg" alt="Variedad de granos">
+</div>
+
+                <div class="producto-info">
+                    <h3>Otros Granos</h3>
+                    <p>Comercializamos una amplia variedad de granos de la región, todos con la garantía de calidad Sur Caribe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         COMPROMISO SOCIAL
+         ======================================== -->
+    <section class="compromiso fade-in" id="compromiso">
+        <h2 class="section-title">Nuestro Compromiso</h2>
+        <p class="section-subtitle">Con la comunidad y el medio ambiente</p>
+        <div class="compromiso-grid">
+            <div class="compromiso-item">
+                <i class="fas fa-users"></i>
+                <h3>Apoyo a Agricultores</h3>
+                <p>Compramos directamente a agricultores locales con precios justos</p>
+            </div>
+            <div class="compromiso-item">
+                <i class="fas fa-leaf"></i>
+                <h3>Prácticas Sostenibles</h3>
+                <p>Promovemos agricultura responsable que protege el medio ambiente</p>
+            </div>
+            <div class="compromiso-item">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Educación</h3>
+                <p>Talleres sobre alimentación saludable y aprovechamiento de nutrientes</p>
+            </div>
+            <div class="compromiso-item">
+                <i class="fas fa-briefcase"></i>
+                <h3>Generación de Empleo</h3>
+                <p>Creamos oportunidades laborales dignas en la comunidad</p>
+            </div>
+            <div class="compromiso-item">
+                <i class="fas fa-utensils"></i>
+                <h3>Cultura Gastronómica</h3>
+                <p>Rescatamos recetas tradicionales y saberes ancestrales</p>
+            </div>
+            <div class="compromiso-item">
+                <i class="fas fa-handshake"></i>
+                <h3>Comercio Justo</h3>
+                <p>Conectamos el campo con la ciudad de manera equitativa</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         GALERÍA - PROCESO PRODUCTIVO
+         🖼️ 6 IMÁGENES DEL PROCESO REQUERIDAS
+         ======================================== -->
+    <section class="galeria fade-in">
+        <h2 class="section-title">Nuestra Tierra</h2>
+        <p class="section-subtitle">El Sur Caribe en imágenes</p>
+        <div class="galeria-grid">
+            <!-- GALERÍA 1: CULTIVO -->
+            <div class="galeria-item" style="background: url('https://i.imgur.com/ezRBt81.jpeg') center/cover;">
+    <div class="galeria-item-content">
+        <i class="fas fa-tractor" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+        <h3>Cultivo Tradicional</h3>
+    </div>
+</div>
+
+            <!-- GALERÍA 2: TRABAJO ARTESANAL -->
+            <div class="galeria-item" style="background: url('https://i.imgur.com/n5vJR8x.jpeg') center/cover;">
+    <div class="galeria-item-content">
+        <i class="fas fa-hands" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+        <h3>Trabajo Artesanal</h3>
+    </div>
+</div>
+
+            <!-- GALERÍA 3: SECADO -->
+<div class="galeria-item" style="background: url('https://i.imgur.com/4TdKxMT.jpeg') center/cover;">
+    <div class="galeria-item-content">
+        <i class="fas fa-sun" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+        <h3>Secado Natural</h3>
+    </div>
+</div>
+            
+
+            <!-- GALERÍA 4: EMPAQUE -->
+<div class="galeria-item" style="background: url('https://i.imgur.com/9Vava0S.jpeg') center/cover;">
+    <div class="galeria-item-content">
+        <i class="fas fa-box-open" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+        <h3>Empaque Cuidadoso</h3>
+    </div>
+</div>
+
+           <!-- GALERÍA 5: DISTRIBUCIÓN -->
+<div class="galeria-item" style="background: url('https://i.imgur.com/eGeLxcr.jpeg') center/cover;">
+    <div class="galeria-item-content">
+        <i class="fas fa-truck" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+        <h3>Distribución</h3>
+    </div>
+</div>
+
+            <!-- GALERÍA 6: COMUNIDAD -->
+<div class="galeria-item" style="background: url('https://i.imgur.com/C0ECaBa.jpeg') center/cover;">
+    <div class="galeria-item-content">
+        <i class="fas fa-smile" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+        <h3>Comunidad Feliz</h3>
+    </div>
+</div>
+            </div>
+        
+    </section>
+
+    <!-- ========================================
+         CONTACTO - FORMULARIO Y DATOS
+         📧 EDITABLE: Configura EmailJS y datos
+         ======================================== -->
+    <section class="contacto fade-in" id="contacto">
+        <h2 class="section-title">Contáctanos</h2>
+        <p class="section-subtitle">Estamos aquí para servirte</p>
+        <div class="contacto-container">
+            <div class="contacto-info">
+                <div class="contacto-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="contacto-item-text">
+                        <h3>Ubicación</h3>
+                        <p>Aguachica, Cesar<br>Sur Caribe Colombiano</p>
+                        <!-- 📝 Edita la dirección cuando tengas los datos -->
+                    </div>
+                </div>
+                <div class="contacto-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="contacto-item-text">
+                        <h3>Teléfono</h3>
+                        <p>+57  317 5315276 - 314 4936332</p>
+                    </div>
+                </div>
+
+                <div class="contacto-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="contacto-item-text">
+                        <h3>Email</h3>
+                        <p>granosdelsurcaribe@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contacto-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div class="contacto-item-text">
+                        <h3>WhatsApp</h3>
+                        <p>+57  317 5315276 - 314 4936332</p>
+                        <!-- 📝 Cambia este número (también edita el botón flotante en JavaScript) -->
+                    </div>
+                </div>
+
+            <!-- FORMULARIO DE CONTACTO -->
+            <div class="contacto-form">
+               <form action="https://formspree.io/f/xgvpeovp" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo *</label>
+                        <input type="text" id="nombre" name="nombre" required="" placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico *</label>
+                        <input type="email" id="email" name="email" required="" placeholder="tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+57 123 456 7890">
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" required="" placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" id="submitBtn">Enviar Mensaje</button>
+                    <div class="form-message" id="formMessage"></div>
+                    <input type="text" name="_gotcha" style="display:none">
+                </form>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- ========================================
+         FOOTER - PIE DE PÁGINA
+         ======================================== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Granos Sur Caribe</h3>
+                <p>El sabor auténtico del Caribe colombiano</p>
+                <p style="font-style: italic; color: var(--dorado); margin-top: 1rem;">"Cultivamos el éxito de sueños sembrados"</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <a href="#inicio">Inicio</a>
+                <a href="#historia">Nuestra Historia</a>
+                <a href="#valores">Valores</a>
+                <a href="#productos">Productos</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Aguachica, Cesar</p>
+                <p><i class="fas fa-phone"></i> +57  317 5315276 - 314 4936332</p>
+                <p><i class="fas fa-envelope"></i> granosdelsurcaribe@gmail.com</p>
+            </div>
+            <div class="footer-section">
+    <h3>Síguenos</h3>
+    <div class="redes-sociales">
+        <a href="https://www.instagram.com/granosdelsurcaribe?igsh=dnRuMmlwb3JjbnQ0" target="_blank" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/573175315276?text=%C2%A1Hola!%20Me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Granos%20Sur%20Caribe." target="_blank" class="social-icon" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+</div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Granos Sur Caribe. Todos los derechos reservados.</p>
+            <p>Desarrollado con <i class="fas fa-heart" style="color: var(--terracota);"></i> para el Sur Caribe colombiano</p>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JAVASCRIPT - FUNCIONALIDADES
+         ======================================== -->
+    <script>
+        // ==========================================
+        // CONFIGURACIÓN EDITABLE
+        // ⚠️ IMPORTANTE: EDITA ESTOS VALORES
+        // ==========================================
+        const CONFIG = {
+            // 📱 WHATSAPP: Cambia este número (sin espacios, con código de país)
+            whatsappNumber: '573175315276', // Ejemplo: 573001234567
+            whatsappMessage: '¡Hola! Me gustaría obtener más información sobre Granos Sur Caribe.',
+            
+            // 📧 EMAILJS: Configura tu cuenta en https://www.emailjs.com/
+            // Sigue los pasos:
+            // 1. Crea una cuenta gratuita en EmailJS
+            // 2. Crea un servicio de email (Gmail, Outlook, etc.)
+            // 3. Crea una plantilla de email
+            // 4. Copia los IDs y pégalos aquí:
+            emailjs: {
+                serviceId: 'YOUR_SERVICE_ID',      // 📝 Reemplaza con tu Service ID
+                templateId: 'YOUR_TEMPLATE_ID',    // 📝 Reemplaza con tu Template ID
+                publicKey: 'YOUR_PUBLIC_KEY'       // 📝 Reemplaza con tu Public Key
+            },
+            
+            // 📧 EMAIL DESTINO: Donde llegarán los mensajes del formulario
+            recipientEmail: 'info@granossurcaribe.com' // 📝 Cambia por tu email real
+        };
+
+        // ==========================================
+        // INICIALIZACIÓN DE EMAILJS
+        // ==========================================
+        // Verifica si EmailJS está configurado
+        if (CONFIG.emailjs.publicKey !== 'YOUR_PUBLIC_KEY') {
+            emailjs.init(CONFIG.emailjs.publicKey);
+        }
+
+        // ==========================================
+        // BOTÓN FLOTANTE DE WHATSAPP
+        // ==========================================
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        if (whatsappBtn) {
+            whatsappBtn.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(CONFIG.whatsappMessage)}`;
+        }
+
+        // ==========================================
+        // MOBILE MENU TOGGLE
+        // ==========================================
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+        }
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // ==========================================
+        // SMOOTH SCROLLING
+        // ==========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 100;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ==========================================
+        // SCROLL ANIMATIONS
+        // ==========================================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ==========================================
+        // HEADER SCROLL EFFECT
+        // ==========================================
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // ==========================================
+        // FORMULARIO DE CONTACTO CON EMAILJS
+        // ==========================================
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formMessage = document.getElementById('formMessage');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                // Verificar si EmailJS está configurado
+                if (CONFIG.emailjs.serviceId === 'YOUR_SERVICE_ID') {
+                    showMessage('⚠️ El formulario aún no está configurado. Por favor, configura EmailJS siguiendo las instrucciones en el código.', 'error');
+                    return;
+                }
+
+                // Deshabilitar botón y mostrar loading
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
+                formMessage.style.display = 'none';
+
+                // Recoger datos del formulario
+                const formData = {
+                    nombre: document.getElementById('nombre').value,
+                    email: document.getElementById('email').value,
+                    telefono: document.getElementById('telefono').value || 'No proporcionado',
+                    mensaje: document.getElementById('mensaje').value,
+                    recipient_email: CONFIG.recipientEmail
+                };
+
+                try {
+                    // Enviar email usando EmailJS
+                    const response = await emailjs.send(
+                        CONFIG.emailjs.serviceId,
+                        CONFIG.emailjs.templateId,
+                        formData
+                    );
+
+                    if (response.status === 200) {
+                        showMessage('✅ ¡Mensaje enviado exitosamente! Nos pondremos en contacto contigo pronto.', 'success');
+                        contactForm.reset();
+                    } else {
+                        throw new Error('Error al enviar');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    showMessage('❌ Hubo un error al enviar el mensaje. Por favor, intenta contactarnos por WhatsApp o teléfono.', 'error');
+                }
+
+                // Rehabilitar botón
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Enviar Mensaje';
+            });
+        }
+
+        // Función para mostrar mensajes
+        function showMessage(message, type) {
+            formMessage.textContent = message;
+            formMessage.className = `form-message ${type}`;
+            formMessage.style.display = 'block';
+
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(() => {
+                formMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        // ==========================================
+        // SMOOTH ENTRANCE ON PAGE LOAD
+        // ==========================================
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+
+        // ==========================================
+        // PREVENIR ENVÍO DE FORMULARIO SIN EMAILJS
+        // ==========================================
+        // Si EmailJS no está configurado, mostrar alerta al cargar
+        window.addEventListener('DOMContentLoaded', () => {
+            if (CONFIG.emailjs.serviceId === 'YOUR_SERVICE_ID') {
+                console.warn('⚠️ CONFIGURACIÓN PENDIENTE:');
+                console.warn('1. WhatsApp: Edita CONFIG.whatsappNumber en el JavaScript');
+                console.warn('2. EmailJS: Configura tu cuenta y actualiza CONFIG.emailjs');
+                console.warn('3. Datos de contacto: Actualiza teléfonos, emails y direcciones en el HTML');
+                console.warn('4. Imágenes: Reemplaza los SVG/gradientes con tus fotos reales');
+            }
+        });
+
+        // ==========================================
+        // ENLACES DE REDES SOCIALES
+        // ==========================================
+        // Si quieres que los enlaces de redes sociales se abran con un mensaje específico
+        document.querySelectorAll('.redes-sociales a').forEach(link => {
+            if (link.querySelector('.fa-whatsapp')) {
+                link.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(CONFIG.whatsappMessage)}`;
+            }
+            // Para otras redes, edita directamente el href en el HTML
+        });
+    </script>
+
+    <!-- ==========================================
+         INSTRUCCIONES PARA CONFIGURAR EMAILJS
+         ==========================================
+         
+         PASO 1: Crear cuenta en EmailJS
+         - Ve a https://www.emailjs.com/
+         - Registrate con tu email
+         - Verifica tu cuenta
+         
+         PASO 2: Agregar servicio de email
+         - En el dashboard, ve a "Email Services"
+         - Click en "Add New Service"
+         - Elige tu proveedor (Gmail recomendado)
+         - Conecta tu cuenta de email
+         - Copia el SERVICE ID
+         
+         PASO 3: Crear plantilla de email
+         - Ve a "Email Templates"
+         - Click en "Create New Template"
+         - Usa esta plantilla:
+         
+         Subject: Nuevo mensaje de contacto - Granos Sur Caribe
+         
+         Body:
+         Has recibido un nuevo mensaje desde el sitio web:
+         
+         Nombre: {{nombre}}
+         Email: {{email}}
+         Teléfono: {{telefono}}
+         
+         Mensaje:
+         {{mensaje}}
+         
+         - Guarda y copia el TEMPLATE ID
+         
+         PASO 4: Obtener Public Key
+         - Ve a "Account" > "General"
+         - Copia tu Public Key
+         
+         PASO 5: Actualizar el código
+         - Pega los IDs en CONFIG.emailjs (líneas 20-24 del JavaScript)
+         - Cambia CONFIG.recipientEmail por tu email real
+         
+         ¡Listo! El formulario funcionará automáticamente.
+         ========================================== -->
+
+
+
+            <script>// Write JavaScript here</script>
+        
+    
+</body>
